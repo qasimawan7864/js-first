@@ -48,3 +48,45 @@ function greet() {
 console.log(typeof person);   // object
 console.log(typeof numbers);  // object
 console.log(typeof greet);    // function
+
+
+
+/*
+==================================================================
+            MEMORY  (STACK (Primitive)-HEAP (Non-Primitive))
+==================================================================
+*/
+
+// Memory = where variables are stored
+
+
+// 🔹 STACK (Primitive)
+// copy of value, no effect on original
+
+let a = 10;
+let b = a;   // copy
+
+b = 20;
+
+console.log(a); // 10 (no change)
+console.log(b); // 20
+
+
+// 🔹 HEAP (Non-Primitive)
+// reference (same address), change affects both
+
+let obj1 = {
+  name: "Qasim"
+};
+
+let obj2 = obj1; // reference
+
+obj2.name = "Ali";
+
+console.log(obj1.name); // Ali
+console.log(obj2.name); // Ali
+
+
+// 🔹 SUMMARY
+// Stack → copy
+// Heap  → reference
