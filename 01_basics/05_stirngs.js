@@ -93,3 +93,31 @@ console.log(full.slice(0, 5)); // Qasim
 let message = "Hello Ali";
 
 console.log(message.replace("Ali", "Qasim")); // Hello Qasim
+
+
+/*
+========================================
+        ADVANCED METHODS
+========================================
+*/
+
+// 1) trim() → remove extra spaces (start/end)
+
+let text1 = "   Qasim   ";
+
+console.log(text1.trim()); // "Qasim"
+
+
+// 2) split() → convert string into array
+
+let text2 = "Qasim Awan";
+
+console.log(text2.split(" ")); // ["Qasim", "Awan"]
+
+
+// 3) indexOf() → find position (index)
+
+let text3 = "Hello Qasim";
+
+console.log(text3.indexOf("Qasim")); // 6
+console.log(text3.indexOf("Ali"));   // -1 (not found)
