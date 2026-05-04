@@ -4,30 +4,30 @@
 ========================================
 */
 
-//1) CONST => //value change نہیں ہو سکتی
-// وجہ: یہ constant ہوتا ہے، ایک بار assign ہو جائے تو دوبارہ نہیں بدل سکتا
+//1) CONST => value change nahi ho sakti
+// waja: yeh constant hota hai, aik baar assign ho jaye to dobara nahi badalta
 const accountId = 1;
-    // accountId = 2; ❌ error
+    // accountId = 2; error
 
 
- //2) LET => //value change ہو سکتی ہے
-        // وجہ: یہ block scope variable ہے، modern JS میں safe ہے
+ //2) LET => value change ho sakti hai
+        // waja: yeh block scope variable hai, modern JS me safe hai
         let accountEmail = "qasim@gmail.com";
-    accountEmail = "new@gmail.com"; // ✅ allowed
+    accountEmail = "new@gmail.com"; // allowed
 
 
-// 3) VAR => //old method (avoid کریں)
-// وجہ: یہ function scoped ہے، block {} کو ignore کرتا ہے → bugs آتے ہیں
+// 3) VAR => old method (avoid karein)
+// waja: yeh function scoped hai, block {} ko ignore karta hai → bugs aate hain
 var accountPassword = "12345";
 
 
-       // 4) بغیر keyword ❌
-        // وجہ: یہ global variable بن جاتا ہے (dangerous)
+       // 4) baghair keyword
+        // waja: yeh global variable ban jata hai (dangerous)
         accountCity = "Islamabad";
 
 
        // 5) declare but no value
-        // وجہ: JS default طور پر undefined دے دیتا ہے
+        // waja: JS default tor par undefined deta hai
         let accountState;
 
 
