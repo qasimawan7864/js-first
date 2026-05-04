@@ -95,3 +95,30 @@ console.log(!true);         // false (NOT)
 //  IMPORTANT (String + Number)
 console.log("1" + 2); // "12" (string join)
 console.log(1 + "2"); // "12"
+
+
+/*
+========================================
+     PREFIX & POSTFIX (++ / --)
+========================================
+*/
+
+// Prefix = first increase, then use
+let p = 5;
+
+console.log(++p); // 6 (first increase → then print)
+console.log(p);   // 6
+
+
+// Postfix = first use, then increase
+let q = 5;
+
+console.log(q++); // 5 (first print → then increase)
+console.log(q);   // 6
+
+
+// Combined example
+let z = 5;
+
+console.log(z++); // 5
+console.log(++z); // 7
