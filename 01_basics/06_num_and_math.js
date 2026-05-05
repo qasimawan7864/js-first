@@ -76,11 +76,11 @@ console.log("toPrecision(4):", num3.toPrecision(4)); // 123.9
 let num4 = 1000000;
 
 console.log("US Format:", num4.toLocaleString());        // 1,000,000
-console.log("India Format:", num4.toLocaleString('en-IN')); // 10,00,000
+console.log("Pakistan Format:", num4.toLocaleString('en-PK')); // 10,00,000
 
 // Use: jab large numbers ko asani se read karna ho
 
-
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // ============================================
 // Math Object (Built-in)
