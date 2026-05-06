@@ -15,7 +15,7 @@ let person = {
   city: "Lahore"
 };
 
-console.log(person);
+console.log(person["name"]);
 
 
 // ============================================
@@ -73,7 +73,7 @@ console.log(person);
 
 let user = {
   name: "Ali",
-  greet: function() {
+  greet: function () {
     console.log("Hello " + this.name);
   }
 };
