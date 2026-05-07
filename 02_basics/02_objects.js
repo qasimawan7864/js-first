@@ -9,7 +9,7 @@
 // 1) OBJECT KYA HAI?
 // ============================================
 
-// Object = related data ko ek jagah store karna
+// Object = related data ko ek jagah store karna (key:value pairs)
 
 // real life example:
 // user ki information
