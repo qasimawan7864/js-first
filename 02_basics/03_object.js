@@ -1,132 +1,151 @@
 // ============================================
-// SINGLETON & DESTRUCTURING NOTES
-// (SUPER EASY)
+// OBJECTS IN JAVASCRIPT - PART 2
+// (ADVANCE + REAL WORLD USE)
 // ============================================
 
 
 
 // ============================================
-// 1) SINGLETON KYA HAI?
+// 1) METHOD KYA HAI?
 // ============================================
 
-// Singleton = ek hi object ko
-// multiple variables use karen
+// object ke andar function ho
+// to usko method kehte hain
 
-// same object sharing
+const user = {
 
+  name: "Qasim",
 
-const user1 = {
-  name: "Qasim"
+  greet: function() {
+    console.log("Hello");
+  }
+
 };
 
-const user2 = user1;
+user.greet();
 
 
-// dono same object ko use kar rahe hain
 
-console.log(user1);
+// ============================================
+// 2) METHOD KYUN USE KARTE HAIN?
+// ============================================
+
+// object ka data + kaam
+// ek jagah rakhne ke liye
+
+
+const car = {
+
+  brand: "BMW",
+
+  start: function() {
+    console.log("Car Started");
+  }
+
+};
+
+car.start();
+
+
+
+// ============================================
+// 3) this KEYWORD
+// ============================================
+
+// this = current object
+
+const student = {
+
+  name: "Ali",
+
+  greet: function() {
+    console.log("Hello " + this.name);
+  }
+
+};
+
+student.greet();
+
+
+
+// JS internally:
+
+// this.name
+// same as:
+// student.name
+
+
+
+// ============================================
+// 4) MODERN METHOD SYNTAX
+// ============================================
+
+// purana syntax
+
+const obj1 = {
+
+  sayHi: function() {
+    console.log("Hi");
+  }
+
+};
+
+
+// modern syntax
+
+const obj2 = {
+
+  sayHi() {
+    console.log("Hi");
+  }
+
+};
+
+obj2.sayHi();
+
+
+
+// ============================================
+// 5) CONSTRUCTOR OBJECT
+// ============================================
+
+// new Object() se object banana
+
+const user2 = new Object();
+
+user2.name = "Ahmed";
+user2.age = 22;
+
 console.log(user2);
 
 
 
 // ============================================
-// 2) SINGLETON BEHAVIOR
+// 6) OBJECT DESTRUCTURING
 // ============================================
 
-user2.name = "Ali";
-
-console.log(user1.name); // Ali
-console.log(user2.name); // Ali
-
-
-// Q KIUN?
-// kyun ke dono same object ko point kar rahe hain
-// new copy nahi bani
-
-
-
-// ============================================
-// 3) VISUAL UNDERSTANDING
-// ============================================
-
-// user1 ──► { name: "Qasim" }
-// user2 ──► same object
-
-
-
-// ============================================
-// 4) REAL LIFE EXAMPLE
-// ============================================
-
-// office system
-
-const system = {
-  users: 100
-};
-
-const admin = system;
-const employee = system;
-
-
-// admin change karega
-admin.users = 200;
-
-console.log(employee.users); // 200
-
-
-// q kiun?
-// kyun ke same object use ho raha hai
-
-
-
-// ============================================
-// 5) SINGLETON SUMMARY
-// ============================================
-
-// singleton = same object sharing
-
-// ek object
-// multiple references
-
-
-
-
-
-// ============================================
-// 6) DESTRUCTURING KYA HAI?
-// ============================================
-
-// object se values nikalna
-// shortcut tareeqe se
+// object se values shortcut me nikalna
 
 const course = {
+
   coursename: "JS",
   price: 999,
   instructor: "Hitesh"
+
 };
 
 
-
-// ============================================
-// 7) NORMAL WAY
-// ============================================
+// normal way
 
 console.log(course.instructor);
 
 
-// bar bar likhna parta hai:
-// course.instructor
-// course.price
-
-
-
-// ============================================
-// 8) DESTRUCTURING
-// ============================================
+// destructuring
 
 const { instructor } = course;
 
 console.log(instructor);
+
 
 
 // JS internally ye karta hai:
@@ -136,7 +155,7 @@ console.log(instructor);
 
 
 // ============================================
-// 9) MULTIPLE VALUES
+// 7) MULTIPLE VALUES DESTRUCTURING
 // ============================================
 
 const { coursename, price } = course;
@@ -147,7 +166,7 @@ console.log(price);
 
 
 // ============================================
-// 10) RENAME VARIABLE
+// 8) RENAME VARIABLE
 // ============================================
 
 const { instructor: teacher } = course;
@@ -161,14 +180,17 @@ console.log(teacher);
 
 
 // ============================================
-// 11) DEFAULT VALUE
+// 9) DEFAULT VALUE
 // ============================================
 
-const student = {
-  name: "Ali"
+const profile = {
+
+  name: "Qasim"
+
 };
 
-const { city = "Lahore" } = student;
+
+const { city = "Lahore" } = profile;
 
 console.log(city);
 
@@ -179,20 +201,185 @@ console.log(city);
 
 
 // ============================================
-// 12) FINAL SUMMARY
+// 10) OBJECT.KEYS()
 // ============================================
 
-// SINGLETON
-// same object sharing
+// object ki keys nikalna
+
+const person = {
+
+  name: "Ali",
+  age: 20
+
+};
+
+console.log(Object.keys(person));
 
 
-// DESTRUCTURING
-// object se values shortcut me nikalna
+// output:
+// ["name", "age"]
 
 
-// { } = destructuring syntax
+
+// ============================================
+// 11) OBJECT.VALUES()
+// ============================================
+
+// object ki values nikalna
+
+console.log(Object.values(person));
 
 
-// const {name} = user
-// same as:
-// const name = user.name
+// output:
+// ["Ali", 20]
+
+
+
+// ============================================
+// 12) OBJECT.ENTRIES()
+// ============================================
+
+// key:value pairs array me
+
+console.log(Object.entries(person));
+
+
+
+// ============================================
+// 13) SPREAD OPERATOR (...)
+// ============================================
+
+// objects merge karna
+
+const objA = {
+  a: 1,
+  b: 2
+};
+
+const objB = {
+  c: 3,
+  d: 4
+};
+
+
+const objC = {
+  ...objA,
+  ...objB
+};
+
+console.log(objC);
+
+
+
+// ============================================
+// 14) OPTIONAL CHAINING
+// ============================================
+
+// ?. = safe access
+
+const user3 = {
+  name: "Usman"
+};
+
+
+console.log(user3.address?.city);
+
+
+// undefined
+// error nahi aayega
+
+
+
+// ============================================
+// 15) API DATA
+// ============================================
+
+// APIs zyada tar object ya
+// array of objects deti hain
+
+
+const apiUser = {
+
+  name: "Qasim",
+  followers: 100
+
+};
+
+console.log(apiUser.name);
+
+
+
+// ============================================
+// 16) ARRAY OF OBJECTS
+// ============================================
+
+const users = [
+
+  {
+    name: "Ali",
+    age: 20
+  },
+
+  {
+    name: "Ahmed",
+    age: 25
+  }
+
+];
+
+
+console.log(users[0].name);
+
+
+// users = array
+// [0] = first object
+// .name = object ki value
+
+
+
+// ============================================
+// 17) JSON
+// ============================================
+
+// API data mostly JSON me hota hai
+
+// JSON object jaisa hota hai
+// lekin keys me quotes hoty hain
+
+
+const jsonData = `
+
+{
+  "name": "Qasim",
+  "age": 25
+}
+
+`;
+
+
+
+// ============================================
+// FINAL SUMMARY
+// ============================================
+
+// method = object ke andar function
+
+// this = current object
+
+// constructor = new Object()
+
+// destructuring = shortcut se values nikalna
+
+// Object.keys() = keys
+
+// Object.values() = values
+
+// Object.entries() = key:value arrays
+
+// spread (...) = merge/copy
+
+// ?. = safe access
+
+// API = object/JSON data
+
+// array of objects common hai

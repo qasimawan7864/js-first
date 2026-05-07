@@ -1,21 +1,27 @@
 // ============================================
-// OBJECT LITERAL (BASIC → ADVANCE NOTES)
+// OBJECTS IN JAVASCRIPT - PART 1
+// (FUNDAMENTALS / BASIC FOUNDATION)
 // ============================================
+
 
 
 // ============================================
 // 1) OBJECT KYA HAI?
 // ============================================
 
-// Object = related data ka group (key:value pairs)
+// Object = related data ko ek jagah store karna (key: value pairs)
 
-let person = {
+// real life example:
+// user ki information
+
+const user = {
   name: "Qasim",
   age: 25,
   city: "Lahore"
 };
 
-console.log(person["name"]);
+console.log(user);
+
 
 
 // ============================================
@@ -23,175 +29,238 @@ console.log(person["name"]);
 // ============================================
 
 // { } = object literal
+
+// object me data:
 // key : value
 
-// name = key
-// "Qasim" = value
+// Example:
 
-
-// ============================================
-// 3) VALUE ACCESS KARNA
-// ============================================
-
-// dot notation
-console.log(person.name); // Qasim
-
-// bracket notation
-console.log(person["age"]); // 25
-
-
-// ============================================
-// 4) VALUE CHANGE KARNA
-// ============================================
-
-person.age = 30;
-
-console.log(person.age); // 30
-
-
-// ============================================
-// 5) NEW VALUE ADD KARNA
-// ============================================
-
-person.country = "Pakistan";
-
-console.log(person);
-
-
-// ============================================
-// 6) VALUE DELETE KARNA
-// ============================================
-
-delete person.city;
-
-console.log(person);
-
-
-// ============================================
-// 7) OBJECT ME FUNCTION (METHOD)
-// ============================================
-
-let user = {
+const person = {
   name: "Ali",
-  greet: function () {
-    console.log("Hello " + this.name);
-  }
+  age: 20
 };
 
-user.greet(); // Hello Ali
+
+// name = key
+// "Ali" = value
+
+// age = key
+// 20 = value
+
 
 
 // ============================================
-// 8) NESTED OBJECT (OBJECT KE ANDAR OBJECT)
+// 3) OBJECT LITERAL
 // ============================================
 
-let student = {
+// { } se object banana
+// isko object literal kehte hain
+
+const obj = {
+  username: "Qasim"
+};
+
+console.log(obj);
+
+
+
+// ============================================
+// 4) VALUE ACCESS KARNA
+// ============================================
+
+// object se value nikalna
+
+
+const student = {
   name: "Ahmed",
-  address: {
-    city: "Karachi",
-    zip: 12345
-  }
+  marks: 90
 };
 
-console.log(student.address.city); // Karachi
+
+// ============================================
+// DOT NOTATION
+// ============================================
+
+console.log(student.name); // Ahmed
+
+
+// JS internally:
+
+// student object me jao
+// name key ki value lao
+
+
+
+// ============================================
+// BRACKET NOTATION
+// ============================================
+
+console.log(student["marks"]); // 90
+
+
+// dono same kaam karte hain
+
+
+
+// ============================================
+// 5) VALUE UPDATE KARNA
+// ============================================
+
+student.marks = 95;
+
+console.log(student.marks);
+
+
+// pehle:
+// marks = 90
+
+// ab:
+// marks = 95
+
+
+
+// ============================================
+// 6) NEW VALUE ADD KARNA
+// ============================================
+
+student.city = "Karachi";
+
+console.log(student);
+
+
+// new key:value add ho gaya
+
+
+
+// ============================================
+// 7) VALUE DELETE KARNA
+// ============================================
+
+delete student.city;
+
+console.log(student);
+
+
+// city remove ho gaya
+
+
+
+// ============================================
+// 8) NESTED OBJECT
+// ============================================
+
+// object ke andar object
+
+const regularUser = {
+
+  email: "test@gmail.com",
+
+  fullname: {
+
+    userfullname: {
+
+      firstname: "Qasim",
+      lastname: "Awan"
+
+    }
+
+  }
+
+};
+
+
+
+// ============================================
+// NESTED VALUE ACCESS
+// ============================================
+
+console.log(
+  regularUser.fullname.userfullname.firstname
+);
+
+
+// step-by-step:
+
+// regularUser me jao
+// fullname me jao
+// userfullname me jao
+// firstname ki value lao
+
 
 
 // ============================================
 // 9) ARRAY INSIDE OBJECT
 // ============================================
 
-let data = {
+const profile = {
+
   name: "Qasim",
-  skills: ["HTML", "CSS", "JS"]
+
+  skills: ["HTML", "CSS", "JavaScript"]
+
 };
 
-console.log(data.skills[0]); // HTML
+console.log(profile.skills[0]); // HTML
 
 
-// ============================================
-// 10) OBJECT KE KEYS & VALUES
-// ============================================
+// profile = object
+// skills = array
 
-let obj = { a: 1, b: 2 };
-
-console.log(Object.keys(obj));   // ["a", "b"]
-console.log(Object.values(obj)); // [1, 2]
-console.log(Object.entries(obj));// [["a",1],["b",2]]
 
 
 // ============================================
-// 11) LOOP OBJECT
+// 10) SINGLETON (BASIC CONCEPT)
 // ============================================
 
-let user2 = { name: "Ali", age: 20 };
-
-for (let key in user2) {
-  console.log(key, user2[key]);
-}
+// singleton = same object sharing
 
 
-// ============================================
-// 12) OBJECT COPY (IMPORTANT)
-// ============================================
-
-let original = { name: "Qasim" };
-
-// shallow copy
-let copy = { ...original };
-
-copy.name = "Ali";
-
-console.log(original.name); // Qasim (safe)
-console.log(copy.name);     // Ali
-
-
-// ============================================
-// 13) DESTRUCTURING (ADVANCE)
-// ============================================
-
-let person2 = {
-  name: "Qasim",
-  age: 25
+const user1 = {
+  name: "Qasim"
 };
 
-let { name, age } = person2;
-
-console.log(name); // Qasim
-console.log(age);  // 25
+const user2 = user1;
 
 
-// ============================================
-// 14) OPTIONAL CHAINING (ADVANCE)
-// ============================================
+// dono same object use kar rahe hain
 
-let user3 = {
-  name: "Ali"
-};
 
-console.log(user3.address?.city); // undefined (no error)
+user2.name = "Ali";
+
+
+console.log(user1.name); // Ali
+console.log(user2.name); // Ali
+
+
+
+// q kiun?
+// kyun ke new copy nahi bani
+// same object share ho raha hai
+
 
 
 // ============================================
 // FINAL SUMMARY
 // ============================================
 
-// Object = key:value data
+// Object = related data
+
 // { } = object literal
 
-// . (dot) = access
-// [] (bracket) = dynamic access
+// key:value = object data
 
-// add → obj.newKey
-// update → obj.key = value
-// delete → delete obj.key
+// . (dot) = value access
 
-// method = function inside object
+// [] (bracket) = value access
 
-// nested = object inside object
+// update = obj.key = value
+
+// add = obj.newKey = value
+
+// delete = delete obj.key
+
+// nested object = object ke andar object
+
 // array inside object possible
 
-// keys / values / entries
-
-// spread (...) = copy
-// destructuring = easy extract
-// optional chaining = safe access
+// singleton = same object sharing
