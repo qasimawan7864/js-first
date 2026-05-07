@@ -1,5 +1,5 @@
 // ============================================
-// SCOPE IN JAVASCRIPT - PART 1
+// SCOPE IN JAVASCRIPT - 
 // (BASIC FOUNDATION)
 // ============================================
 
