@@ -1,6 +1,6 @@
 // ============================================
-// SCOPE IN JAVASCRIPT - 
-// (BASIC FOUNDATION)
+// SCOPE IN JAVASCRIPT - PART 1
+// (BEGINNER FOUNDATION)
 // ============================================
 
 
@@ -8,26 +8,19 @@
 // 1) SCOPE KYA HAI?
 // ============================================
 
-// Scope = variable kahan tak accessible hai
-
-// simple words:
-
-// variable ko
-// kahan use kar sakte hain
-// aur kahan nahi
-
+// Scope
+// = variable ki limit
 
 
 // ============================================
 // 2) GLOBAL SCOPE
 // ============================================
 
-// global scope
-// = har jagah accessible
+// function ke bahar bana variable
+// global scope hota hai
 
 
 let username = "Qasim";
-
 
 function greet() {
 
@@ -35,11 +28,9 @@ function greet() {
 
 }
 
-
 greet();
 
 console.log(username);
-
 
 // output:
 
@@ -47,23 +38,12 @@ console.log(username);
 // Qasim
 
 
-
-// kyun?
-
-// kyun ke:
-// username function ke bahar bana hai
-
-// is liye:
-// har jagah accessible hai
-
-
-
 // ============================================
 // 3) LOCAL / FUNCTION SCOPE
 // ============================================
 
 // function ke andar bana variable
-// sirf function ke andar accessible hota hai
+// sirf function ke andar use hota hai
 
 
 function test() {
@@ -76,21 +56,7 @@ function test() {
 
 test();
 
-// output:
-// 25
-
-
-
-// function ke bahar:
-
-// console.log(age); ❌ error
-
-
-// kyun?
-
-// kyun ke:
-// age sirf function ke andar tha
-
+// console.log(age); ❌
 
 
 // ============================================
@@ -98,7 +64,7 @@ test();
 // ============================================
 
 // { } ke andar bana variable
-// sirf us block ke andar accessible hota hai
+// sirf block ke andar use hota hai
 
 
 if (true) {
@@ -110,29 +76,22 @@ if (true) {
 }
 
 
-// output:
-// Lahore
+// console.log(city); ❌
 
+// +++++++++++++++++++++++++++PART 2++++++++++++++++++++++++++++++++++++++++++++++
 
-
-// block ke bahar:
-
-// console.log(city); ❌ error
-
-
-// kyun?
-
-// kyun ke:
-// city block ke andar tha
-
+// ============================================
+// SCOPE IN JAVASCRIPT- PART 2
+// (INTERMEDIATE → ADVANCE)
+// ============================================
 
 
 // ============================================
-// 5) var
+// 1) var
 // ============================================
 
-// var block scope follow nahi karta
-
+// var
+// = function scope
 
 if (true) {
 
@@ -140,26 +99,22 @@ if (true) {
 
 }
 
-
 console.log(a);
 
 // output:
+
 // 10
 
-
-// kyun?
-
-// kyun ke:
-// var block ke bahar bhi accessible hota hai
-
+// var
+// block scope follow nahi karta
 
 
 // ============================================
-// 6) let
+// 2) let
 // ============================================
 
-// let block scope follow karta hai
-
+// let
+// = block scope
 
 if (true) {
 
@@ -167,22 +122,15 @@ if (true) {
 
 }
 
-// console.log(b); ❌ error
-
-
-// kyun?
-
-// kyun ke:
-// let sirf block ke andar accessible hai
-
+// console.log(b); ❌
 
 
 // ============================================
-// 7) const
+// 3) const
 // ============================================
 
-// const bhi block scope follow karta hai
-
+// const
+// = block scope
 
 if (true) {
 
@@ -190,12 +138,11 @@ if (true) {
 
 }
 
-// console.log(c); ❌ error
-
+// console.log(c); ❌
 
 
 // ============================================
-// 8) var vs let vs const
+// 4) var vs let vs const
 // ============================================
 
 // var
@@ -208,19 +155,71 @@ if (true) {
 // = block scope
 
 
+// ============================================
+// 5) NESTED SCOPE
+// ============================================
+
+function outer() {
+
+  let username = "Qasim";
+
+  function inner() {
+
+    console.log(username);
+
+  }
+
+  inner();
+
+}
+
+outer();
+
+// inner function
+// outer variable use kar sakta hai
+
 
 // ============================================
-// 9) BEST PRACTICE
+// 6) LEXICAL SCOPE
 // ============================================
 
-// const use karo
-// agar value change nahi karni
+// inner function
+// outer variable use kar sakta hai
 
-// let use karo
-// agar value change karni hai
+function parent() {
 
-// var avoid karo
+  let money = 5000;
 
+  function child() {
+
+    console.log(money);
+
+  }
+
+  child();
+
+}
+
+parent();
+
+
+
+// ============================================
+// 7) SCOPE CHAIN
+// ============================================
+
+// JS variable ko
+// nearest scope me dhondta hai
+
+let country = "Pakistan";
+
+function testScope() {
+
+  console.log(country);
+
+}
+
+testScope();
 
 
 // ============================================
@@ -228,11 +227,11 @@ if (true) {
 // ============================================
 
 // Scope
-// = variable kahan accessible hai
+// = variable ki limit
 
 
 // global scope
-// = har jagah accessible
+// = har jagah use
 
 
 // local scope
@@ -249,3 +248,11 @@ if (true) {
 
 // let,const
 // = block scope
+
+
+// lexical scope
+// = inner function outer variable use kare
+
+
+// scope chain
+// = JS variable dhondta hai
