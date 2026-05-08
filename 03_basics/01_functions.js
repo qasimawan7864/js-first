@@ -13,7 +13,6 @@
 // ek baar code likho
 // baar baar use karo
 
-
 function greet() {
 
   console.log("Hello");
