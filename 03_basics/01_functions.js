@@ -26,7 +26,6 @@ greet();
 // multiple baar use ho raha hai
 
 
-
 // ============================================
 // 2) FUNCTION KYUN USE KARTE HAIN?
 // ============================================
