@@ -1,6 +1,6 @@
 // ============================================
 // FUNCTIONS IN JAVASCRIPT - PART 1
-// (BASIC FOUNDATION)
+// (BEGINNER FOUNDATION)
 // ============================================
 
 
@@ -20,11 +20,8 @@ function greet() {
 
 }
 
-
 greet();
 greet();
-
-
 
 // same function
 // multiple baar use ho raha hai
@@ -36,6 +33,7 @@ greet();
 // ============================================
 
 // code repeat hone se bachane ke liye
+
 
 // bina function:
 
@@ -52,33 +50,37 @@ function sayHello(name) {
 
 }
 
-
 sayHello("Qasim");
 sayHello("Ali");
 sayHello("Ahmed");
 
-
 // code clean aur reusable ho gaya
+
 
 
 // ============================================
 // 3) FUNCTION SYNTAX
 // ============================================
 
-// function = JS keyword
+// function
+// = JS keyword
 
-// greetUser = function ka naam
+// sayHi
+// = function ka naam
 
-// ( ) = parameters ki jagah
+// ( )
+// = parameters ki jagah
 
-// { } = function body
+// { }
+// = function body
 
 
-function greetUser() {
+function sayHi() {
 
-  console.log("Welcome");
+  console.log("Hi");
 
 }
+
 
 
 // ============================================
@@ -88,12 +90,7 @@ function greetUser() {
 // function chalane ko
 // function call kehte hain
 
-
-greetUser();
-
-
-// function call:
-// greetUser();
+sayHi();
 
 
 
@@ -101,8 +98,8 @@ greetUser();
 // 5) PARAMETERS
 // ============================================
 
-// parameter = function ke andar variable
-
+// parameter
+// = function ke andar variable
 
 function userName(name) {
 
@@ -111,21 +108,19 @@ function userName(name) {
 }
 
 
-// yahan:
-// name = parameter
-
+// name
+// = parameter
 
 
 // ============================================
 // 6) ARGUMENTS
 // ============================================
 
-// argument = actual value
-
+// argument
+// = actual value
 
 userName("Qasim");
 userName("Ali");
-
 
 // "Qasim"
 // = argument
@@ -136,53 +131,30 @@ userName("Ali");
 
 
 // ============================================
-// 7) PARAMETERS vs ARGUMENTS
+// 7) RETURN
 // ============================================
+
+// return
+// = value wapas bhejna
 
 function add(a, b) {
 
-  console.log(a + b);
+  return a + b;
 
 }
 
-
-add(2, 3);
-
-
-// a,b
-// = parameters
-
-// 2,3
-// = arguments
-
-
-
-// ============================================
-// 8) RETURN
-// ============================================
-
-// return = value wapas bhejna
-
-
-function sum(num1, num2) {
-
-  return num1 + num2;
-
-}
-
-
-let result = sum(5, 3);
+let result = add(2, 3);
 
 console.log(result);
 
 
 // output:
-// 8
 
+// 5
 
 
 // ============================================
-// 9) console.log vs RETURN
+// 8) console.log vs RETURN
 // ============================================
 
 // console.log
@@ -191,35 +163,20 @@ console.log(result);
 // return
 // = value wapas deta hai
 
-
-
-// console.log example
-
 function test1() {
 
   console.log("Hello");
 
 }
 
-
 let x = test1();
 
 console.log(x);
-
 
 // output:
 
 // Hello
 // undefined
-
-
-// kyun?
-
-// kyun ke:
-// function ne kuch return nahi kiya
-
-
-// return example
 
 function test2() {
 
@@ -227,11 +184,9 @@ function test2() {
 
 }
 
-
 let y = test2();
 
 console.log(y);
-
 
 // output:
 
@@ -247,12 +202,8 @@ console.log(y);
 // = reusable code
 
 
-// function call
-// = function chalana
-
-
 // parameter
-// = function ka variable
+// = function variable
 
 
 // argument
@@ -261,7 +212,3 @@ console.log(y);
 
 // return
 // = value wapas bhejna
-
-
-// console.log
-// = screen par dikhana
