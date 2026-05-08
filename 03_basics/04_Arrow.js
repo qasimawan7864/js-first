@@ -1,6 +1,6 @@
 // ============================================
-// ARROW FUNCTIONS IN JAVASCRIPT
-// (BASIC NOTES)
+// ARROW FUNCTIONS IN JAVASCRIPT - PART 1
+// (BEGINNER FOUNDATION)
 // ============================================
 
 
@@ -10,8 +10,6 @@
 
 // Arrow Function
 // = function likhne ka short tareeqa
-
-// arrow:
 
 // =>
 
@@ -29,6 +27,7 @@ function add(a, b) {
 console.log(add(2, 3));
 
 // output:
+
 // 5
 
 
@@ -45,8 +44,8 @@ const add2 = (a, b) => {
 console.log(add2(2, 3));
 
 // output:
-// 5
 
+// 5
 
 
 // ============================================
@@ -58,7 +57,6 @@ const sum = (a, b) => {
   return a + b;
 
 };
-
 
 // sum
 // = function variable
@@ -74,29 +72,11 @@ const sum = (a, b) => {
 
 
 // ============================================
-// 5) SHORT ARROW FUNCTION
-// ============================================
-
-// agar ek line ho
-// to return likhna zarori nahi
-
-
-const multiply = (a, b) => a * b;
-
-
-console.log(multiply(2, 4));
-
-// output:
-// 8
-
-
-// ============================================
-// 6) SINGLE PARAMETER
+// 5) SINGLE PARAMETER
 // ============================================
 
 // ek parameter ho
 // to ( ) optional hain
-
 
 const greet = name => {
 
@@ -104,20 +84,19 @@ const greet = name => {
 
 };
 
-
 greet("Qasim");
 
 // output:
+
 // Hello Qasim
 
 
 // ============================================
-// 7) NO PARAMETERS
+// 6) NO PARAMETERS
 // ============================================
 
 // agar parameter na ho
 // to empty ( ) likhenge
-
 
 const sayHi = () => {
 
@@ -128,28 +107,128 @@ const sayHi = () => {
 sayHi();
 
 // output:
+
 // Hi
 
+// +++++++++++++++++++++++++++++PART 2++++++++++++++++++++++++++++++++++++++++++
 
 
 // ============================================
-// 8) REAL LIFE EXAMPLE
+// ARROW FUNCTIONS IN JAVASCRIPT - PART 2
+// (INTERMEDIATE → ADVANCE)
 // ============================================
 
-// calculator function
+
+// ============================================
+// 1) SHORT ARROW FUNCTION
+// ============================================
+
+// ek line ho
+// to return likhna zarori nahi
+
+const multiply = (a, b) => a * b;
 
 
-const divide = (a, b) => {
+console.log(multiply(2, 4));
 
-  return a / b;
+// output:
+
+// 8
+
+
+// ============================================
+// 2) EXPLICIT RETURN
+// ============================================
+
+// khud return likhna
+
+
+const add = (a, b) => {
+
+  return a + b;
 
 };
 
+console.log(add(2, 3));
 
-console.log(divide(10, 2));
+
+
+// ============================================
+// 3) IMPLICIT RETURN
+// ============================================
+
+// automatic return
+
+const subtract = (a, b) => a - b;
+
+console.log(subtract(5, 2));
 
 // output:
-// 5
+
+// 3
+
+
+// ============================================
+// 4) OBJECT RETURN
+// ============================================
+
+// object return karne ke liye
+// ( ) zarori hain
+
+
+const getUser = () => ({
+
+  name: "Qasim"
+
+});
+
+console.log(getUser());
+
+
+// ============================================
+// 5) ARROW FUNCTION & this
+// ============================================
+
+// arrow function
+// apna this nahi banata
+
+
+const user = {
+
+  name: "Qasim",
+
+  greet: () => {
+
+    console.log(this.name);
+
+  }
+
+};
+
+user.greet();
+
+
+// ============================================
+// 6) NORMAL FUNCTION & this
+// ============================================
+
+const user2 = {
+
+  name: "Ali",
+
+  greet: function() {
+
+    console.log(this.name);
+
+  }
+
+};
+
+user2.greet();
+
+// output:
+
+// Ali
 
 
 // ============================================
@@ -159,14 +238,14 @@ console.log(divide(10, 2));
 // Arrow Function
 // = short function syntax
 
-
 // =>
 // = arrow
 
+// implicit return
+// = automatic return
 
-// short arrow function
-// = return likhna zarori nahi
+// explicit return
+// = return keyword
 
-
-// modern JavaScript me
-// bohat use hota hai
+// arrow function
+// apna this nahi banata
