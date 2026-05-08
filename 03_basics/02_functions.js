@@ -1,6 +1,6 @@
-                                                                            // ============================================
+// ============================================
 // FUNCTIONS IN JAVASCRIPT - PART 2
-// (INTERMEDIATE CONCEPTS)
+// (INTERMEDIATE → ADVANCE)
 // ============================================
 
 
@@ -9,8 +9,6 @@
 // ============================================
 
 // function ko variable me store karna
-// = function expression
-
 
 const greet = function() {
 
@@ -18,118 +16,12 @@ const greet = function() {
 
 };
 
-
 greet();
 
 
-// yahan:
-
-// greet
-// = variable
-
-// function
-// = variable me store hai
-
-
 
 // ============================================
-// 2) FUNCTION DECLARATION vs EXPRESSION
-// ============================================
-
-// function declaration
-
-function sayHi() {
-
-  console.log("Hi");
-
-}
-
-
-
-// function expression
-
-const sayHello = function() {
-
-  console.log("Hello");
-
-};
-
-
-
-// dono functions hain
-// lekin syntax different hai
-
-
-
-// ============================================
-// 3) ARROW FUNCTION
-// ============================================
-
-// short syntax function
-
-
-const add = (a, b) => {
-
-  return a + b;
-
-};
-
-
-console.log(add(2, 3));
-
-
-// output:
-// 5
-
-
-
-// ============================================
-// 4) SHORT ARROW FUNCTION
-// ============================================
-
-// agar ek line ho
-// to return likhna zarori nahi
-
-
-const multiply = (a, b) => a * b;
-
-
-console.log(multiply(2, 4));
-
-
-// output:
-// 8
-
-
-
-// ============================================
-// 5) NORMAL FUNCTION vs ARROW FUNCTION
-// ============================================
-
-// normal function
-
-function sum1(a, b) {
-
-  return a + b;
-
-}
-
-
-// arrow function
-
-const sum2 = (a, b) => {
-
-  return a + b;
-
-};
-
-
-// dono same kaam karte hain
-
-
-
-// ============================================
-// 6) DEFAULT PARAMETERS
+// 2) DEFAULT PARAMETERS
 // ============================================
 
 // agar argument na aaye
@@ -142,87 +34,66 @@ function loginUser(username = "Guest") {
 
 }
 
-
 loginUser();
-
-
-
-// output:
-// Guest
-
-
-
 loginUser("Qasim");
 
-
 // output:
+
+// Guest
 // Qasim
 
 
-
 // ============================================
-// 7) REST OPERATOR (...)
+// 3) REST OPERATOR (...)
 // ============================================
 
-// multiple values ko ek array me lena
+// multiple values ko array me lena
 
 
-function calculateCartPrice(...prices) {
+function cartPrice(...prices) {
 
   console.log(prices);
 
 }
 
-
-calculateCartPrice(100, 200, 300);
-
+cartPrice(100, 200, 300);
 
 // output:
 
-// [100, 200, 300]
-
-
-// prices
-// = array ban gaya
+// [100,200,300]
 
 
 
 // ============================================
-// 8) REST OPERATOR EXAMPLE
+// 4) CALLBACK FUNCTION
 // ============================================
 
-function totalPrice(...items) {
+// function ko argument me bhejna
 
-  let total = 0;
 
-  for (let price of items) {
+function greetUser(name) {
 
-    total += price;
-
-  }
-
-  return total;
+  console.log("Hello " + name);
 
 }
 
-console.log(totalPrice(100, 200, 300));
+function processUser(callback) {
 
+  callback("Qasim");
 
-// output:
-// 600
+}
 
+processUser(greetUser);
 
 
 // ============================================
-// 9) HOISTING BASICS
+// 5) HOISTING
 // ============================================
 
 // function declaration
 // hoist hoti hai
 
-
 sayName();
-
 
 function sayName() {
 
@@ -231,20 +102,14 @@ function sayName() {
 }
 
 
-// output:
-// Qasim
-
-
-
 // ============================================
-// 10) FUNCTION EXPRESSION HOISTING
+// 6) FUNCTION EXPRESSION HOISTING
 // ============================================
 
 // function expression
 // hoist nahi hoti
 
-
-// sayAge(); ❌ error
+// sayAge(); ❌
 
 
 const sayAge = function() {
@@ -254,11 +119,33 @@ const sayAge = function() {
 };
 
 
-// kyun?
+// ============================================
+// 7) ANONYMOUS FUNCTION
+// ============================================
 
-// kyun ke:
-// variable me function store hai
+// bina naam wala function
 
+setTimeout(function() {
+
+  console.log("Hello");
+
+}, 1000);
+
+
+// ============================================
+// 8) IIFE
+// ============================================
+
+// Immediately Invoked Function Expression
+
+// function jo turant chale
+
+
+(function() {
+
+  console.log("IIFE");
+
+})();
 
 
 // ============================================
@@ -266,20 +153,16 @@ const sayAge = function() {
 // ============================================
 
 // function expression
-// = function ko variable me store karna
+// = variable me function
 
 
-// arrow function
-// = short syntax function
+// callback function
+// = function as argument
 
 
-// default parameter
-// = default value
+// anonymous function
+// = bina naam function
 
 
-// rest operator (...)
-// = multiple values ko array me lena
-
-
-// hoisting
-// = declaration se pehle use karna
+// IIFE
+// = turant chalne wala function
