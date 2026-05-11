@@ -4,7 +4,6 @@
 // ============================================
 
 
-
 // ============================================
 // 1) SWITCH KYA HAI?
 // ============================================
@@ -17,8 +16,6 @@
 // kai possible values hon
 
 // tab switch use hota hai
-
-
 
 
 
@@ -42,7 +39,6 @@ switch(value) {
 }
 
 
-
 // switch(value)
 // = JS value check karega
 
@@ -51,8 +47,6 @@ switch(value) {
 
 // break
 // = stop
-
-
 
 
 
@@ -83,12 +77,9 @@ switch(day) {
 }
 
 
-
 // output:
 
 // Tuesday
-
-
 
 
 
@@ -104,16 +95,12 @@ switch(day) {
 
 
 
-
-
 // ============================================
 // 5) BREAK KYA HAI?
 // ============================================
 
 // break
 // = switch ko stop karta hai
-
-
 
 
 
@@ -137,7 +124,6 @@ switch(num) {
 }
 
 
-
 // output:
 
 // One
@@ -145,8 +131,6 @@ switch(num) {
 
 
 // break ne switch stop kar diya
-
-
 
 
 
@@ -170,24 +154,16 @@ switch(value) {
 
 }
 
-
-
 // output:
 
 // Two
 // Three
 
 
-
-
-
 // kyun?
 
 // kyun ke:
 // break nahi tha
-
-
-
 
 
 // ============================================
@@ -216,13 +192,9 @@ switch(month) {
 
 }
 
-
-
 // output:
 
 // Invalid Month
-
-
 
 
 
@@ -249,13 +221,9 @@ switch(role) {
 }
 
 
-
 // output:
 
 // Full Access
-
-
-
 
 
 // ============================================
@@ -268,8 +236,6 @@ switch(role) {
 
 // switch
 // = exact values ke liye
-
-
 
 
 
